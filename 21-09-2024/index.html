@@ -31,55 +31,55 @@
 
             var total = set + treinta;
 
-            document.getElementById('tot').value = total;
-
             if (total < 2) {
-                alert('perdio la materia')
-            } else if (total < 3) {
-                alert('perdio la materia pero puede habilitar');
-            } else (alert('aprobo la materia'))
+                document.getElementById('tot').value = 'Perdio la materia: ' + total;
+            } else if (total < 2.95) {
+                document.getElementById('tot').value = 'Perdio la materia pero puede habilitar: ' + total;
+            } else {
+                document.getElementById('tot').value = 'Aprobo la materia: ' + total;
+            }
         }
 
         function sumar() {
             var num1 = parseFloat(document.getElementById('numero1').value);
             var num2 = parseFloat(document.getElementById('numero2').value);
 
-            var suma = num1  + num2;
+            var suma = num1 + num2;
 
             document.getElementById('totSum').textContent = 'total: ' + suma;
         }
-        
+
         function multiplicar() {
             var num1 = parseFloat(document.getElementById('multi1').value);
             var num2 = parseFloat(document.getElementById('multi2').value);
-            if (num1 % 2 === 0 && num2 % 2 === 0 ) {
+            if (num1 % 2 === 0 && num2 % 2 === 0) {
                 var multi = num1 * num2;
-                document.getElementById('totMulti').textContent = 'total: ' + multi;   
-            }else{
+                document.getElementById('totMulti').textContent = 'total: ' + multi;
+            } else {
                 document.getElementById('totMulti').textContent = "no se puede multiplicar";
             }
-            
+
         }
 
         function restar() {
             var edad1 = parseInt(document.getElementById('edad1').value);
             var edad2 = parseInt(document.getElementById('edad2').value);
             var edad3 = parseInt(document.getElementById('edad3').value);
-            var dif1 = Math.abs(edad1-edad2);
-            var dif2 = Math.abs(edad1-edad3);
-            var dif3 = Math.abs(edad2-edad3);
+            var dif1 = Math.abs(edad1 - edad2);
+            var dif2 = Math.abs(edad1 - edad3);
+            var dif3 = Math.abs(edad2 - edad3);
 
             document.getElementById('totResta').textContent = 'Primera y segunda edad es: ' + dif1 + ' | primera y tercera edad es: ' + dif2 + ' | Segunda y tercera edad: ' + dif3;
 
         }
-        
+
         function División() {
             var numerador = parseFloat(document.getElementById('numerador').value);
             var divisor = parseFloat(document.getElementById('divisor').value);
             if (divisor > 0) {
                 var divi = numerador / divisor;
                 document.getElementById('totDivi').textContent = divi;
-            }else {
+            } else {
                 document.getElementById('totDivi').textContent = 'no se puede dividir con el numero cero o inferiores numeros';
             }
 
@@ -170,7 +170,7 @@
                         </div>
                         <div class="col-md-4">
                             <label class="form-label">total</label>
-                            <input type="number" class="form-control " id="tot">
+                            <input type="text" class="form-control " id="tot">
                         </div>
                     </form>
                 </div>
@@ -178,7 +178,6 @@
         </div>
     </div>
 
-    </form>
 
     <div class="text-center">
         <p class="d-inline-flex gap-1 mt-3">
