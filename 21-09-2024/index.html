@@ -41,13 +41,25 @@
         }
 
         function sumar() {
-            var num1 = parseFloat(document.getElementById('numero1')).value;
-            var num2 = parseFloat(document.getElementById('numero2')).value;
+            var num1 = parseFloat(document.getElementById('numero1').value);
+            var num2 = parseFloat(document.getElementById('numero2').value);
 
-            var suma = num1 + num2;
+            var suma = num1  + num2;
 
-            document.getElementById('totsum').textContent = suma;
+            document.getElementById('totSum').textContent = 'total: ' + suma;
         }
+        
+        function Multiplicar() {
+            var num1 = parseFloat(document.getElementById('numero1').value);
+            var num2 = parseFloat(document.getElementById('numero2').value);
+
+            if (num1 % 2 == 0 && num2 % 2 == 0 ) {
+                var Multi = num1 * num2;   
+            }
+            
+            document.getElementById('totMulti').value = total;
+        }
+        
     </script>
 </head>
 
