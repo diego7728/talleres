@@ -31,15 +31,22 @@
 
             var total = set + treinta;
 
-            document.getElementById('tot').value=total;
+            document.getElementById('tot').value = total;
 
             if (total < 2) {
                 alert('perdio la materia')
-            }else if(total < 3){
+            } else if (total < 3) {
+                alert('perdio la materia pero puede habilitar');
+            } else (alert('aprobo la materia'))
+        }
 
-            }else if(){
-                
-            }
+        function sumar() {
+            var num1 = parseFloat(document.getElementById('numero1')).value;
+            var num2 = parseFloat(document.getElementById('numero2')).value;
+
+            var suma = num1 + num2;
+
+            document.getElementById('totsum').textContent = suma;
         }
     </script>
 </head>
@@ -110,7 +117,7 @@
                             <button class="btn btn-primary" type="button" onclick="setenta()">Setenta</button>
                         </div>
                         <div class="col-md-4">
-                            <label class="form-label" >setenta%</label>
+                            <label class="form-label">setenta%</label>
                             <input type="number" class="form-control " id="set">
                         </div>
                         <div class="col-md-4">
@@ -120,127 +127,116 @@
                         <div class="col-12">
                             <button class="btn btn-primary" type="button" onclick="treinta()">treinta</button>
                         </div>
-                        <div class="col-md-4"></div>
-                            <label class="form-label">trinta%</label>
+                        <div class="col-md-4">
+                            <label class="form-label">treinta%</label>
                             <input type="number" class="form-control " id="tre">
                         </div>
-                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
                             <label class="form-label">total</label>
                             <input type="number" class="form-control " id="tot">
                         </div>
+                    </form>
                 </div>
             </div>
         </div>
-    
+    </div>
+
     </form>
 
-    <p class="d-inline-flex gap-1">
+    <div class="text-center">
+        <p class="d-inline-flex gap-1 mt-3">
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSumar"
+                aria-expanded="false" aria-controls="collapseSumar">Sumar</button>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseMultiplicar" aria-expanded="false"
+                aria-controls="collapseMultiplicar">Multiplicar</button>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseResta"
+                aria-expanded="false" aria-controls="collapseResta">Resta</button>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDivision"
+                aria-expanded="false" aria-controls="collapseDivision">División</button>
+        </p>
 
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#sumaCollapseExample2"
-            aria-expanded="false" aria-controls="sumaCollapseExample2">SUMA</button>
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2"
-            aria-expanded="false" aria-controls="multillapseExample2">MULTIPLICACION</button>
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#restaCollapseExample2"
-            aria-expanded="false" aria-controls="restaCollapseExample2">RESTA</button>
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#diviCollapseExample2"
-            aria-expanded="false" aria-controls="restaCollapseExample2">DIVISION</button>
-
-
-    </p>
-    <div class="row">
-        <div class="col">
-            <div class="collapse suma-collapse" id="sumaCollapseExample2">
-                <div class="card card-body">
-                    <form class="row g-3">
-                        <div class="col-md-4">
-                            <label class="form-label">numero a sumar</label>
-                            <input type="number" class="form-control" value="Mark">
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="collapse multi-collapse" id="collapseSumar">
+                    <div class="card card-body">
+                        <div class="mb-3">
+                            <label for="numero1" class="form-label">Ingrese el primer número</label>
+                            <input type="number" class="form-control" id="numero1">
                         </div>
-                        <div class="col-md-4">
-                            <label class="form-label">numero a sumar</label>
-                            <input type="number" class="form-control" value="Otto">
+                        <div class="mb-3">
+                            <label for="numero2" class="form-label">Ingrese el segundo número</label>
+                            <input type="number" class="form-control" id="numero2">
                         </div>
-                        <div class="col-12">
-                            <button class="btn btn-primary" type="submit">Sumar</button>
+                        <div>
+                            <button type="button" class="btn btn-primary" onclick="sumar()">Calcular</button>
                         </div>
-                        <div class="col-md-4"></div>
-                        <label class="form-label">Total</label>
-                        <input type="number" class="form-control " value="Otto">
+                        <div id="totSum">Total: </div>
+                    </div>
                 </div>
-                </form>
+            </div>
+
+            <div class="col-md-3">
+                <div class="collapse multi-collapse" id="collapseMultiplicar">
+                    <div class="card card-body">
+                        <div class="mb-3">
+                            <label for="numero1" class="form-label">Ingrese el primer número</label>
+                            <input type="number" class="form-control" id="numero1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="numero2" class="form-label">Ingrese el segundo número</label>
+                            <input type="number" class="form-control" id="numero2">
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary">Calcular</button>
+                        </div>
+                        <div>Total: </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="collapse multi-collapse" id="collapseResta">
+                    <div class="card card-body">
+                        <div class="mb-3">
+                            <label for="edad1" class="form-label">Ingrese la primera edad</label>
+                            <input type="number" class="form-control" id="edad1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edad2" class="form-label">Ingrese la segunda edad</label>
+                            <input type="number" class="form-control" id="edad2">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edad3" class="form-label">Ingrese la tercera edad</label>
+                            <input type="number" class="form-control" id="edad3">
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary">Calcular</button>
+                        </div>
+                        <div>La diferencia de edades es: </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="collapse multi-collapse" id="collapseDivision">
+                    <div class="card card-body">
+                        <div class="mb-3">
+                            <label for="numero1" class="form-label">Ingrese el primer número</label>
+                            <input type="number" class="form-control" id="numero1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="numero2" class="form-label">Ingrese el segundo número</label>
+                            <input type="number" class="form-control" id="numero2">
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary">Calcular</button>
+                        </div>
+                        <div>Total: </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col">
-        <div class="collapse multi-collapse" id="multiCollapseExample2">
-            <div class="card card-body">
-                <form class="row g-3">
-                    <div class="col-md-4">
-                        <label class="form-label">Ingrese nota de primer previo</label>
-                        <input type="number" class="form-control" value="Mark">
-                    </div>
-                    <div class="col-md-4">
-                        <label class="form-label">Ingrese nota de segundo previo</label>
-                        <input type="number" class="form-control" value="Otto">
-                    </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Calcular</button>
-                    </div>
-                    <div class="col-md-4"></div>
-                    <label class="form-label">Total</label>
-                    <input type="number" class="form-control " value="Otto">
-            </div>
-            </form>
-        </div>
-    </div>
-    </div>
-    <div class="col">
-        <div class="collapse multi-collapse" id="restaCollapseExample2">
-            <div class="card card-body">
-                <form class="row g-3">
-                    <div class="col-md-4">
-                        <label class="form-label">Ingrese nota de primer previo</label>
-                        <input type="number" class="form-control" value="Mark">
-                    </div>
-                    <div class="col-md-4">
-                        <label class="form-label">Ingrese nota de segundo previo</label>
-                        <input type="number" class="form-control" value="Otto">
-                    </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Calcular</button>
-                    </div>
-                    <div class="col-md-4"></div>
-                    <label class="form-label">Total</label>
-                    <input type="number" class="form-control " value="Otto">
-            </div>
-            </form>
-        </div>
-    </div>
-    </div>
-    <div class="col">
-        <div class="collapse multi-collapse" id="diviCollapseExample2">
-            <div class="card card-body">
-                <form class="row g-3">
-                    <div class="col-md-4">
-                        <label class="form-label">Ingrese nota de primer previo</label>
-                        <input type="number" class="form-control" value="Mark">
-                    </div>
-                    <div class="col-md-4">
-                        <label class="form-label">Ingrese nota de segundo previo</label>
-                        <input type="number" class="form-control" value="Otto">
-                    </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Calcular</button>
-                    </div>
-                    <div class="col-md-4"></div>
-                    <label class="form-label">Total</label>
-                    <input type="number" class="form-control " value="Otto">
-            </div>
-            </form>
-        </div>
-    </div>
-    </div>
-    </div>
     </div>
 </body>
 
