@@ -92,7 +92,7 @@
                 <label for="floatingInput">Número de Documento</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Nombre" required>
                 <label for="floatingInput">Nombre</label>
             </div>
             <div class="form-floating mb-3">
@@ -101,7 +101,7 @@
                 <label for="floatingPassword">Fecha de nacimiento</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="edad" placeholder="Edad">
+                <input type="text" class="form-control" id="edad" placeholder="Edad" readonly>
                 <label for="floatingInput">Edad</label>
             </div>
 
@@ -115,14 +115,14 @@
                         </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
+                        <div class="accordion-body text-center">
                             <select class="form-select" aria-label="Default select example" id="eve" onchange="precioEvento()">
                                 <option selected>Seleccionar evento</option>
                                 <option value="1">Poesía</option>
                                 <option value="2">Ciclismo</option>
                                 <option value="3">Running</option>
                             </select>
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-3 mt-3 ">
                                 <input type="text" class="form-control" id="precio" placeholder="Precio evento">
                                 <label for="floatingInput">Precio</label>
                             </div>
@@ -132,7 +132,7 @@
                                 <label for="floatingInput">Código promocional</label>
                             </div>
 
-                            <button class="btn btn-primary" type="button" onclick="aplicarDescuento()">Aplicar código</button>
+                            <button class="btn btn-primary mb-3 mt3-" type="button" onclick="aplicarDescuento()">Aplicar descuento</button>
 
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="descuento" placeholder="Descuento">
