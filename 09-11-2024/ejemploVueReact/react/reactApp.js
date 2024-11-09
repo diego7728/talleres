@@ -46,4 +46,3 @@ function ReactApp() {
 // Monta la aplicación de React en el contenedor con ID 'react-root' usando createRoot
 const root = ReactDOM.createRoot(document.getElementById('react-root'));
 root.render(<ReactApp />);
-
