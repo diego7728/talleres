@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de Reactividad en Vue.js</title>
+    
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Ejemplos de Reactividad en Vue</h1>
+        
+        <h2>Contador: {{ contador }}</h2>
+        <button @click="incrementarContador">Incrementar Contador</button>
+
+
+        <div style="margin-top: 20px;">
+            <h2>Texto en tiempo real:</h2>
+            <input v-model="texto" placeholder="Escribe algo..." />
+            <p>{{ texto }}</p>
+        </div>
+
+
+        <div style="margin-top: 20px;">
+            <h2 :style="{ color: color }">Este texto cambia de color</h2>
+            <button @click="cambiarColor">Cambiar Color</button>
+        </div>
+    </div>
+
+
+    <script src="vueApp.js"></script>
+</body>
+</html>
